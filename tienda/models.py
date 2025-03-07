@@ -1,10 +1,10 @@
 from django.db import models
 
 # Create your models here.
-class Producto(models.Model):
+class Carrito(models.Model):
     nombre = models.CharField(max_length=50)
-    descripcion = models.TextField(null=True, blank=True)
     categoria = models.CharField(max_length=50)
     precio = models.CharField(max_length=20)
     precio_dolares = models.CharField(max_length=20)
-    productos_img = models.ImageField(upload_to="productos", null=True, blank=True)
+    cantidad = models.CharField(max_length=20, null=True)
+    fecha_compra = models.DateField(null=True)

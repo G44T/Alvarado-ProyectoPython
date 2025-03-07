@@ -1,0 +1,74 @@
+{% extends "template_base.html" %} 
+{% load static %}
+
+{% block title %}   
+
+<title>Producto</title>
+
+{% endblock title %}
+
+{% block tienda %}
+active
+{% endblock tienda %}
+
+{% block contenido %}
+
+<section class="page-section bg-light" id="portfolio">
+    <br />
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Listado de Productos</h2>
+            <h3 class="section-subheading text-muted">Todos los Productos de la Tienda</h3>
+        </div>
+
+        <form action="">
+            {{formulario}}
+        
+            <br />
+        
+            <div class="d-grid gap-2">
+              <input class="btn btn-secondary" type="submit" value="Buscar" />
+            </div>
+        </form>
+        
+        <br/>
+        
+        <div class="row">
+
+            {% if Productos %}
+
+            {% for Producto in Productos %}
+
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 1-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" href={% url "lista_detalle_producto" Producto.id %}>
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        {% if Producto.productos_img %}
+                            <img class="img-fluid" src={{Producto.productos_img.url}} alt="..." />
+                        {% else %}
+                            <img class="img-fluid" src={% static "assets/img/portfolio/Pronto.jpg" %} alt="..." />
+                        {% endif %}
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">{{Producto.nombre}}</div>
+                        <div class="portfolio-caption-subheading text-muted">{{Producto.categoria}}</div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+            {% else %}
+
+            <p class="text-center">No hay Productos Cargados.</p>
+
+            {% endif %}
+            
+        </div>
+    </div>
+</section>
+
+{% endblock contenido %}

@@ -1,0 +1,38 @@
+{% extends "template_base.html" %} 
+{% load static %}
+
+{% block title %}   
+
+<title>Producto</title>
+
+{% endblock title %}
+
+{% block carrito %}
+active
+{% endblock carrito %}
+
+{% block contenido %}
+
+<section class="page-section bg-light" id="portfolio">
+    <br />
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Eliminar Iten del Carrito</h2>
+            <h3 class="section-subheading text-muted">Confirma que quiere eliminar el Producto del Carrito el item:{{carrito.nombre}}</h3>
+        </div>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <br />
+        
+            <div class="d-grid gap-2">
+              <input class="btn btn-danger" type="submit" value="Confirmar" />
+            </div>
+        </form>
+        
+        <br/>
+    </div>
+</section>
+
+{% endblock contenido %}

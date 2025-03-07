@@ -18,19 +18,19 @@ active
   <div class="container-xl">
 
     <div class="text-center">
-      <h2 class="section-heading text-uppercase">Registrar Productos</h2>
+      <h2 class="section-heading text-uppercase">Modificar Productos</h2>
       <h3 class="section-subheading text-muted">
-        Registro de Productos para la venta
+        Modifica el Productos para la venta
       </h3>
     </div>
 
-    <form action={% url "registrar_producto" %} method="POST" enctype='multipart/form-data'>
+    <form action={% url 'modificar_producto' producto.id %} method="POST" enctype='multipart/form-data'>
       {% csrf_token %} {{formulario}}
 
       <br />
 
       <div class="d-grid gap-2">
-        <input class="btn btn-primary btn-xl text-uppercase" type="submit" value="Registrar" />
+        <input class="btn btn-primary btn-xl text-uppercase" type="submit" value="Modificar" />
       </div>
     </form>
   </div>

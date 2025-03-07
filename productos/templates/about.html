@@ -1,0 +1,79 @@
+{% extends "template_base.html" %} 
+{% load static %}
+
+{% block title %}
+
+<title>Producto</title>
+
+{% endblock title %} 
+
+{% block about %}active{% endblock about %} 
+
+{% block contenido %}
+
+<section class="page-section" id="about">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">Gianfrano Alvarado</h2>
+    </div>
+    <br />
+    <ul class="timeline">
+      <li>
+        <div class="timeline-image">
+          <img
+            class="rounded-circle img-fluid"
+            src={% static "assets/img/about/1.jpg" %}
+            alt="..."
+          />
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>2014-2018</h4>
+            <h4 class="subheading">Universidad</h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">
+              Estudiando Ingenieria de <br />
+              Sistemas e Informatica
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-image">
+          <img
+            class="rounded-circle img-fluid"
+            src={% static "assets/img/about/2.jpg" %}
+            alt="..."
+          />
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>2018 - 2025</h4>
+            <h4 class="subheading">Trabajo</h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">
+              Desarrollo de Servicios Service Bus, SOAP <br />
+              Desarrollo de Backend en C#, Java <br />
+              Especialista en desarrollo en Oracle Integration Cloud
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-image">
+          <h4>
+            ¡Sea parte
+            <br />
+            de nuestra
+            <br />
+            historia!
+          </h4>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% endblock contenido %}

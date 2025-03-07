@@ -1,0 +1,52 @@
+{% extends "template_base.html" %} 
+{% load static %}
+
+{% block title %}   
+
+<title>Producto</title>
+
+{% endblock title %}
+
+{% block contenido %}
+
+<br />
+<br />
+<br />
+
+<div class="portfolio-modal" id="portfolioModal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">            
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">{{Producto.nombre}}</h2>
+                            <p class="item-intro text-muted">{{Producto.categoria}}</p>
+                            {% if Producto.productos_img %}
+                            <img class="img-fluid d-block mx-auto rounded-circle" src={{Producto.productos_img.url}} alt="..." />
+                            {% else %}
+                            <img class="img-fluid d-block mx-auto rounded-circle" src={% static "assets/img/portfolio/Pronto.jpg" %} alt="..." />
+                            {% endif %}
+                            <p>{{Producto.descripcion}}</p>
+                            <ul class="list-inline">
+                                <li>
+                                    <strong>Precio S/:</strong>
+                                    {{Producto.precio}} 
+                                </li>
+                                <li>
+                                    <strong>Precio Dolares $:</strong>
+                                    {{Producto.precio_dolares}} 
+                                </li>
+                            </ul>
+
+                            <a class="btn btn-primary btn-xl text-uppercase" href={% url "agregar_carrito" Producto.id %}>Agregar al Carrito</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}
